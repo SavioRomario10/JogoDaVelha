@@ -5,5 +5,6 @@ public interface InicializacaoView {
     void exibirMenu();
     int lerOpcao();
     void exibirOpcaoInvalida();
+    void clearView();
 }
 
