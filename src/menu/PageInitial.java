@@ -23,7 +23,7 @@ public class PageInitial implements InicializacaoView{
   @Override
   public int lerOpcao() {
     if (scanner.hasNextInt()) {
-        return scanner.nextInt();
+      return scanner.nextInt();
     }
     scanner.next(); 
     return -1;
