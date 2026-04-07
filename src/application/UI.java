@@ -1,6 +1,14 @@
 package application;
 
+import menu.PageInitial;
+
 public class UI {
+
+  public void initial(PageInitial pi){
+    pi.exibirTitulo();
+    pi.exibirMenu();
+    pi.lerOpcao();
+  }
   public void printTab(){
     for(int i = 0; i < 3; i++){
       printLab(i+1);
