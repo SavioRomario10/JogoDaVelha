@@ -1,13 +1,33 @@
 package application;
 
+import menu.InicializacaoView;
 import menu.PageInitial;
 
 public class UI {
 
-  public void initial(PageInitial pi){
+  public void initial(InicializacaoView pi){
+    int opcao = 1;
+    
+    do{
     pi.exibirTitulo();
     pi.exibirMenu();
-    pi.lerOpcao();
+    opcao = pi.lerOpcao();
+    pi.clearView();
+    printMsg(opcao, pi);
+    }while(opcao != 0);
+
+  }
+
+  public void printMsg(Integer i, InicializacaoView pi){
+    if (i==1) {
+      printTab();
+    }
+    else if (i==2) {
+      ((PageInitial)pi).rules();
+    }
+    else{
+      ((PageInitial)pi).exibirOpcaoInvalida();;
+    }
   }
   public void printTab(){
     for(int i = 0; i < 3; i++){

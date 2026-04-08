@@ -9,7 +9,6 @@ public class Main {
     UI ui = new UI();  
     InicializacaoView iv = new PageInitial();
 
-
-    ui.initial((PageInitial)iv);
+    ui.initial(iv);
   }
 }
