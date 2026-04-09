@@ -1,14 +1,21 @@
 package application;
 
+import java.util.Scanner;
+
 import menu.InicializacaoView;
 import menu.PageInitial;
+import model.Match;
 
 public class UI {
 
-  public void initial(InicializacaoView pi){
+  Scanner sc = new Scanner(System.in);
+  Match m = new Match();
+
+  public void initial( InicializacaoView pi){
     int opcao = 1;
     
     do{
+    pi.clearView();
     pi.exibirTitulo();
     pi.exibirMenu();
     opcao = pi.lerOpcao();
@@ -20,36 +27,20 @@ public class UI {
 
   public void printMsg(Integer i, InicializacaoView pi){
     if (i==1) {
-      printTab();
+      m.printTab();
+      sc.nextLine();
     }
     else if (i==2) {
+      pi.clearView();
+      pi.exibirTitulo();
       ((PageInitial)pi).rules();
+      sc.nextLine();
     }
     else{
-      ((PageInitial)pi).exibirOpcaoInvalida();;
+      pi.clearView();
+      pi.exibirTitulo();
+      pi.exibirOpcaoInvalida();
+      sc.nextLine();
     }
   }
-  public void printTab(){
-    for(int i = 0; i < 3; i++){
-      printLab(i+1);
-      for(int j = 0; j < 3; j++){
-        System.out.print(" | ");
-      }
-      System.out.println(" | ");
-    }
-    printBase();
-  }
-  public void printLab(int i){
-    if(i == 1){
-      System.out.print("A");
-    }else if(i == 2){
-      System.out.print("B");
-    }else if(i == 3){
-      System.out.print("C");
-    }
-  }
-  public void printBase(){
-    System.out.println("   1  2  3");
-  }
-
 }
